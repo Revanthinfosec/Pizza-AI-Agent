@@ -53,10 +53,37 @@ Welcome to the **Pizza AI Agent**! This project is an AI-powered assistant that 
    pip install -r requirements.txt
    ```
 
-4. **Run the agent:**
+4. **Install Ollama:**
+   Ollama is required to run local language models. You can install it on macOS with:
+   ```bash
+   curl -fsSL https://ollama.com/install.sh | sh
+   ollama run llama3
+   ```
+   For other platforms and more details, see the [Ollama installation guide](https://ollama.com/download).
+
+5. **Run the agent:**
    ```bash
    python3 main.py
    ```
+
+---
+
+## 🧰 Why These Tools?
+
+- **Ollama:**
+  - Used to run large language models (LLMs) locally on your machine, ensuring privacy and fast inference without relying on cloud APIs.
+  - In this project, Ollama provides both the embedding model (for vector search) and the LLM (for answering questions).
+
+- **Chroma:**
+  - A vector database that stores and indexes the embeddings of restaurant reviews.
+  - Enables fast, semantic search to retrieve the most relevant reviews for any user question.
+
+- **LangChain:**
+  - Orchestrates the flow between the retriever (Chroma) and the LLM (Ollama), making it easy to build retrieval-augmented generation (RAG) pipelines.
+
+- **Pandas:**
+  - Used for reading and processing the CSV file containing restaurant reviews.
+  - Makes it easy to manipulate tabular data and prepare it for embedding and storage.
 
 ---
 
